@@ -67,12 +67,14 @@ This diagram shows the physical topology of the network. The network is divided 
 Needed to isolate lab environment from the home network for security while maintaining connectivity for management. 
 - Implemented two-subnet design by enabling IP passthrough on the ISP device.
 - Configured the router with static routes, and established a Tailscale network for secure cross-subnet access without exposing services publicly.
+
 **Outcome:** Lab experiments can't impact home network devices. Remote access achieved without port forwarding.
 
 **Firewall Lockout Recovery**:
 Configured a firewall rule on the router that blocked my own management access.
 - Confirmed physical connectivity to rule out a hardware issue, then determined the problem was isolated to management access rather than all traffic.
 - Reviewed previously applied firewall rules and identified a missing explicit "accept" action, causing traffic to fall through to a default "deny" policy.
+
 **Outcome:** Management access restored via factory reset; adopted a two-session verification process for all future firewall changes to prevent recurrence.
 
 ---
